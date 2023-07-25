@@ -23,3 +23,8 @@ jobs:
         with:
           python-version: '3.9'
           message: 'Hello from the example workflow!'
+
+      - name: Write to workflow job summary
+        run: |
+          SUMMARY=$'# Job Summary\n## Second Level Heading\nHello World'
+          echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
