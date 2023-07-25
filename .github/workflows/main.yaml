@@ -1,0 +1,17 @@
+name: Example Workflow
+
+on: [push, pull_request]
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    name: An example job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run My Python Action
+        uses: njannasch/action_playground_python@main
+        with:
+          python-version: '3.9'
+          message: 'Hello from the example workflow!'
